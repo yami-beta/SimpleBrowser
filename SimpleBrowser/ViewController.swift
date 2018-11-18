@@ -23,5 +23,9 @@ class ViewController: UIViewController {
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
     }
+    @IBAction func reloadButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func stopButtonTapped(_ sender: UIBarButtonItem) {
+    }
 }
 
