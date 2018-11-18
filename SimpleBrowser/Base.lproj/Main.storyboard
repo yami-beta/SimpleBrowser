@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-jE-ITr">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-jE-ITr" userLabel="Search Panel">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-wh-b7L">
@@ -43,13 +43,13 @@
                                     <constraint firstAttribute="height" constant="44" id="2b3-Mw-rjn"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="hPL-mt-sdR">
+                                    <barButtonItem title="Item" id="hPL-mt-sdR" userLabel="Back">
                                         <connections>
                                             <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="B9e-tB-ZEE"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="LLr-8h-7ca"/>
-                                    <barButtonItem systemItem="refresh" id="oxm-EG-EzQ">
+                                    <barButtonItem systemItem="refresh" id="oxm-EG-EzQ" userLabel="Reload">
                                         <connections>
                                             <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="Pe2-bM-x1G"/>
                                         </connections>
