@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="44" id="2b3-Mw-rjn"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="hPL-mt-sdR" userLabel="Back">
+                                    <barButtonItem title="Item" image="button-back.png" id="hPL-mt-sdR" userLabel="Back">
                                         <connections>
                                             <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="B9e-tB-ZEE"/>
                                         </connections>
@@ -93,4 +93,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="button-back.png" width="44" height="44"/>
+    </resources>
 </document>
