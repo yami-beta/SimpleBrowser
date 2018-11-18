@@ -27,12 +27,13 @@ class ViewController: UIViewController {
 
     // 文字列で指定されたURLをWeb Viewで開く。
     func open(urlString: String) {
-      let url = URL(string: urlString)
-      let urlRequest = URLRequest(url: url!)
-      webView.loadRequest(urlRequest)
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        webView.loadRequest(urlRequest)
     }
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        webView.goBack()
     }
     @IBAction func reloadButtonTapped(_ sender: UIBarButtonItem) {
         webView.reload()
