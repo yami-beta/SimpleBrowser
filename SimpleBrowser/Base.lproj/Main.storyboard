@@ -43,7 +43,11 @@
                                     <constraint firstAttribute="height" constant="44" id="2b3-Mw-rjn"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="hPL-mt-sdR"/>
+                                    <barButtonItem title="Item" id="hPL-mt-sdR">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="B9e-tB-ZEE"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="LLr-8h-7ca"/>
                                     <barButtonItem title="Item" id="oxm-EG-EzQ"/>
                                     <barButtonItem title="Item" id="gro-sa-cve"/>
