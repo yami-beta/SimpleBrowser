@@ -14,6 +14,7 @@
 		6F349BF021A12B4000DC6EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F349BEE21A12B4000DC6EBD /* LaunchScreen.storyboard */; };
 		6F349BFB21A12B4000DC6EBD /* SimpleBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F349BFA21A12B4000DC6EBD /* SimpleBrowserTests.swift */; };
 		6F349C0621A12B4000DC6EBD /* SimpleBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F349C0521A12B4000DC6EBD /* SimpleBrowserUITests.swift */; };
+		6F349C1621A13FE900DC6EBD /* button-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F349C1521A13FE900DC6EBD /* button-back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6F349C0121A12B4000DC6EBD /* SimpleBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F349C0521A12B4000DC6EBD /* SimpleBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrowserUITests.swift; sourceTree = "<group>"; };
 		6F349C0721A12B4000DC6EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F349C1521A13FE900DC6EBD /* button-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-back.png"; path = "SimpleBrowser/Resources/button-back.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		6F349BE421A12B3D00DC6EBD /* SimpleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				6F349C1421A13F9B00DC6EBD /* Resources */,
 				6F349BE521A12B3D00DC6EBD /* AppDelegate.swift */,
 				6F349BE721A12B3D00DC6EBD /* ViewController.swift */,
 				6F349BE921A12B3D00DC6EBD /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				6F349C0721A12B4000DC6EBD /* Info.plist */,
 			);
 			path = SimpleBrowserUITests;
+			sourceTree = "<group>";
+		};
+		6F349C1421A13F9B00DC6EBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F349C1521A13FE900DC6EBD /* button-back.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F349C1621A13FE900DC6EBD /* button-back.png in Resources */,
 				6F349BF021A12B4000DC6EBD /* LaunchScreen.storyboard in Resources */,
 				6F349BED21A12B4000DC6EBD /* Assets.xcassets in Resources */,
 				6F349BEB21A12B3D00DC6EBD /* Main.storyboard in Resources */,
