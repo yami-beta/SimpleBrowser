@@ -44,6 +44,9 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Item" id="hPL-mt-sdR"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LLr-8h-7ca"/>
+                                    <barButtonItem title="Item" id="oxm-EG-EzQ"/>
+                                    <barButtonItem title="Item" id="gro-sa-cve"/>
                                 </items>
                             </toolbar>
                         </subviews>
