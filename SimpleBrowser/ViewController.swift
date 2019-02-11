@@ -19,6 +19,15 @@ class ViewController: UIViewController, UIWebViewDelegate {
     // ホームページのURL。起動時にこのページを開く。
     let homeUrlString = "http://www.yahoo.co.jp"
     
+    // URLのホワイトリスト。
+    // このURLにあてはまればアプリ内ブラウザで表示許可。
+    // 前方一致の正規表現で処理される。
+    let whiteList = [
+        "https?://.*\\.yahoo\\.co\\.jp",
+        "https?://.*\\.yahoo\\.com",
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,6 +42,22 @@ class ViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(urlRequest)
     }
     
+    // 文字列で指定されたURLをSafariで開く。
+    func openInSafari(urlString: String) {
+        if let nsUrl = URL(string: urlString) {
+            UIApplication.shared.open(nsUrl)
+        }
+    }
+
+    // 読込完了後の処理
+    func stopLoading() {
+        activityIndicator.alpha = 0
+        activityIndicator.stopAnimating()
+        backButton.isEnabled = true
+        reloadButton.isEnabled = true
+        stopButton.isEnabled = false
+    }
+
     // MARK: - UIWebViewDelegate
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.alpha = 1
@@ -42,11 +67,39 @@ class ViewController: UIViewController, UIWebViewDelegate {
         stopButton.isEnabled = true
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        activityIndicator.alpha = 0
-        activityIndicator.stopAnimating()
-        backButton.isEnabled = true
-        reloadButton.isEnabled = true
-        stopButton.isEnabled = false
+        stopLoading()
+    }
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        // ユーザの操作によるリクエストでなければ表示許可。
+        if navigationType == UIWebView.NavigationType.other {
+            return true;
+        }
+        
+        // 現在表示中のURLを取得。
+        var theUrl: String
+        if let unwrappedUrl = request.url?.absoluteString {
+            theUrl = unwrappedUrl
+        } else {
+            // 現在表示中のURLが取得できない場合表示不許可。
+            stopLoading()
+            return false;
+        }
+        
+        // ホワイトリストでループしてURLがホワイトリスト内にあるかチェック。
+        var canStayInApp = false;
+        for url in whiteList {
+            if theUrl.range(of: url, options: NSString.CompareOptions.regularExpression) != nil {
+                canStayInApp = true;
+                break;
+            }
+        }
+        
+        if !canStayInApp {
+            openInSafari(urlString: theUrl)
+            stopLoading()
+            return false;
+        }
+        return true
     }
 
     // MARK: - IBAction
