@@ -32,7 +32,24 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let urlRequest = URLRequest(url: url!)
         webView.loadRequest(urlRequest)
     }
+    
+    // MARK: - UIWebViewDelegate
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.alpha = 1
+        activityIndicator.startAnimating()
+        backButton.isEnabled = false
+        reloadButton.isEnabled = false
+        stopButton.isEnabled = true
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.alpha = 0
+        activityIndicator.stopAnimating()
+        backButton.isEnabled = true
+        reloadButton.isEnabled = true
+        stopButton.isEnabled = false
+    }
 
+    // MARK: - IBAction
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         webView.goBack()
     }
