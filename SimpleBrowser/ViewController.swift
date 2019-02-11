@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIWebViewDelegate {
+class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var stopButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -18,6 +18,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
     
     // ホームページのURL。起動時にこのページを開く。
     let homeUrlString = "http://www.yahoo.co.jp"
+    
+    // 検索機能で使うURL
+    let searchUrlString = "http://search.yahoo.co.jp/search?p="
     
     // URLのホワイトリスト。
     // このURLにあてはまればアプリ内ブラウザで表示許可。
@@ -100,6 +103,16 @@ class ViewController: UIViewController, UIWebViewDelegate {
             return false;
         }
         return true
+    }
+    
+    // MARK: - UISearchBarDelegate
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        guard let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return }
+        
+        let urlString = searchUrlString + encodedText
+        open(urlString: urlString)
+        searchBar.resignFirstResponder()
     }
 
     // MARK: - IBAction
