@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var stopButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
