@@ -96,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qWW-XR-t35" id="PbI-ja-i3L"/>
                         <outlet property="backButton" destination="hPL-mt-sdR" id="Iaa-LZ-sJM"/>
                         <outlet property="reloadButton" destination="oxm-EG-EzQ" id="njN-lR-s1o"/>
                         <outlet property="searchBar" destination="Pg3-wh-b7L" id="09M-rC-g3B"/>

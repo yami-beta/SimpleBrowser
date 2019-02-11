@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // ホームページのURL。起動時にこのページを開く。
     let homeUrlString = "http://www.yahoo.co.jp"
